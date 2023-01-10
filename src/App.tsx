@@ -1,4 +1,5 @@
 import { BasicTypes } from "./typescrpt/BasicTypes";
+import Functions from "./typescrpt/Functions";
 import LiteralObjects from "./typescrpt/LiteralObjects";
 
 const App = () => {
@@ -9,6 +10,8 @@ const App = () => {
       <BasicTypes />
       <hr/>
       <LiteralObjects/>
+      <hr/>
+      <Functions />
     </div>
   )
 }
