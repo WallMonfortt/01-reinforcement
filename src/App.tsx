@@ -1,3 +1,4 @@
+import Counter from "./components/Counter";
 import { BasicTypes } from "./typescrpt/BasicTypes";
 import Functions from "./typescrpt/Functions";
 import LiteralObjects from "./typescrpt/LiteralObjects";
@@ -12,6 +13,8 @@ const App = () => {
       <LiteralObjects/>
       <hr/>
       <Functions />
+      <hr/>
+      <Counter />
     </div>
   )
 }
