@@ -1,5 +1,6 @@
 import Counter from "./components/Counter";
 import CounterWithHook from "./components/CounterWithHook";
+import Login from "./components/login";
 import { BasicTypes } from "./typescrpt/BasicTypes";
 import Functions from "./typescrpt/Functions";
 import LiteralObjects from "./typescrpt/LiteralObjects";
@@ -18,6 +19,8 @@ const App = () => {
       <Counter />
       <hr/>
       <CounterWithHook/>
+      <hr/>
+      <Login/>
     </div>
   )
 }
