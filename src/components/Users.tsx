@@ -1,37 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
-import { reqRes } from '../API/reqRes';
-import { User, UsersResponse } from '../interfaces/reqRes';
+import useUsers from '../hooks/useUsers';
+import { User } from '../interfaces/reqRes';
 
 const Users = () => {
-
-    const [users, setUsers] = useState<User[]>([]);
-    const pageRef = useRef(1)
-
-    useEffect(() => {
-      // call Api
-      loadUsers();
-    }, [])
-
-    const loadUsers = async () => {
-        const resp = await reqRes.get<UsersResponse>("/users",{
-            params: {
-                page: pageRef.current //.current is the value of the reference
-            }
-        })
-            //console.log(res.data.data);
-            if(resp.data.data.length > 0){
-                pageRef.current++;
-            }else{
-                alert("No more records");
-            }
-            
-            if(pageRef.current > 2){
-                pageRef.current = 1;
-            }
-            console.log(pageRef.current)
-            setUsers(resp.data.data);
-            
-    }
+   
+    const {users, nextPage, prevPage} = useUsers();
 
     const renderUsers = ( {id, first_name, last_name,email,avatar}: User) => {
         return (
@@ -69,9 +41,16 @@ const Users = () => {
         </table>
 
         <button className="btn btn-primary"
-            onClick={loadUsers}
+            onClick={prevPage}
         >
-            load more
+            prev
+        </button>
+        &nbsp;
+
+        <button className="btn btn-primary"
+            onClick={nextPage}
+        >
+            next
         </button>
     </>
   )
