@@ -1,5 +1,6 @@
 import Counter from "./components/Counter";
 import CounterWithHook from "./components/CounterWithHook";
+import Forms from "./components/Forms";
 import Login from "./components/Login";
 import Users from "./components/Users";
 import { BasicTypes } from "./typescrpt/BasicTypes";
@@ -24,6 +25,8 @@ const App = () => {
       <Login/>
       <hr/>
       <Users/>
+      <hr/>
+      <Forms/>
     </div>
   )
 }
